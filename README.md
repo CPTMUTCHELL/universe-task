@@ -8,5 +8,5 @@ mvn clean package
 ``` 
 3.After packaging run:
 ```
-java -jar target/converter-0.0.1-SNAPSHOT.jar
+java -jar target/universe-task-0.0.1-SNAPSHOT.jar
 ```
