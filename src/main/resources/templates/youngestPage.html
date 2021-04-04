@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 10 youngest</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <span>Name</span>
+        </th>
+        <th>
+            <span>Age</span>
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="master:${top10}">
+        <td th:text="${master.name}"></td>
+        <td th:text="${master.age}"></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href = "@{/masters}">Back to masters page</a>
+</body>
+</html>

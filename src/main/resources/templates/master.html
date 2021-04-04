@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Master Page</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <span>Name</span>
+        </th>
+        <th>
+            <span>Age</span>
+        </th>
+        <th>
+            <a>Show planets</a>
+        </th>
+        <th>
+            <a>Select planet</a>
+        </th>
+        <th>
+            <a>Add</a>
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="master:${masters}">
+        <td th:text="${master.name}"></td>
+        <td th:text="${master.age}"></td>
+        <td>
+            <a th:href="@{'/masters/planets/' +${master.id}}">Show planets</a>
+        </td>
+        <form th:action="@{'/masters/planets/add/' +${master.id}}" th:object="${planetTo}" method="post">
+        <td>
+
+            <select th:field="*{id}">
+                <option th:each="planet : ${planets}"
+                        th:text="${planet.name}"
+                        th:value="${planet.id}"></option>
+            </select>
+
+        </td>
+        <td>
+            <button type="submit" >Save</button>
+        </td>
+        </form>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/masters/top10}">Show ten youngest masters</a>
+<a th:href="@{/masters/idlers}">Show idle masters</a>
+<a th:href = "@{/start}">Back to start page</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Master's planets</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <span>Name</span>
+        </th>
+        <th>
+            <a>Destroy planet</a>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="planet:${planets}">
+        <td th:text="${planet.name}"></td>
+        <td>
+            <a th:href="@{'/planets/destroy/' +${planet.id}}"  th:text="Destroy"></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a th:href = "@{/masters}">Back to masters page</a>
+</body>
+</html>
