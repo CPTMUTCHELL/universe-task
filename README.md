@@ -10,3 +10,5 @@ mvn clean package
 ```
 java -jar target/universe-task-0.0.1-SNAPSHOT.jar
 ```
+4. Proceed to http://localhost:8080/start URL.
+5. Proceed to http://localhost:8080/h2-console to open H2 console.
